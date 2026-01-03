@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 
 function PropertyCardLarge({property,addFavourites}){
+    const navigate = useNavigate()
     return(
         <div className="large-prop-card">
             <img src={property.thumbnail} alt={property.name}/>
@@ -11,7 +13,7 @@ function PropertyCardLarge({property,addFavourites}){
                 <p className="type">{property.type}</p>
             </div>
             <button className="heart" onClick={()=>addFavourites(property)}>♥</button> 
-            <button className="details">View Details</button> 
+            <button className="details" onClick={() => navigate(`/property/${property.id}`)}>View Details</button> 
         </div>
     )
 }

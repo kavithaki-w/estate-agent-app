@@ -1,11 +1,12 @@
 import PropertyCardSmall from "./components/PropertyCardSmall"
 import NavBar from "./components/NavBar.jsx"
 import SearchForm from "./components/SearchForm"
-import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import data from "./properties.json"
 
 
 function SearchPage({setResults}){
+    const navigate = useNavigate()
 
   const handleSearch = (criteria) =>{
     let filteredRes = [...data.properties]
@@ -65,6 +66,8 @@ function SearchPage({setResults}){
 }
 
    setResults(filteredRes)
+
+   navigate("/results")
   }
 
   return (
