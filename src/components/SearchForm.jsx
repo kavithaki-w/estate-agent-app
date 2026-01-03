@@ -2,6 +2,7 @@ import {useState} from "react"
 import DatePicker from "react-datepicker"
 import Select from 'react-select'
 import "react-datepicker/dist/react-datepicker.css";
+import "./SearchForm.css"
 
 function SearchForm({onSearch}){
 
