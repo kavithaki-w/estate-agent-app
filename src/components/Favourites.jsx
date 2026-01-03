@@ -11,7 +11,7 @@ function Favourites({favourites,removeFavourites,clearAll}){
 
                 {/*<img src = "{property.icon}" alt = "{property.name}"/> */}
                 <div className = "property-info">
-                    {/*<strong>{property.name}</strong>*/}
+                    <strong>{property.name}</strong>
                     <p>{property.price}</p>
                 </div>
                 <button className = "remove-button" onClick={() => removeFavourites(property)}>X</button>

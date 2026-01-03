@@ -1,0 +1,164 @@
+/* ================= ROOT LAYOUT ================= */
+
+.property-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+/* ================= TITLE SECTION ================= */
+
+.property-title-section h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.location {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.property-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.bullet {
+  color: #9ca3af;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-wrapper {
+  margin-top: 32px;
+}
+
+/* Make main image BIG */
+.property-image-gallery .image-gallery-slide img {
+  height: 520px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Thumbnail column (RIGHT SIDE) */
+.property-image-gallery .image-gallery-thumbnails-wrapper.right {
+  width: 110px;
+}
+
+.property-image-gallery .image-gallery-thumbnail {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.property-image-gallery .image-gallery-thumbnail:hover {
+  transform: scale(1.03);
+}
+
+.property-image-gallery .image-gallery-thumbnail.active {
+  border-color: #2563eb;
+}
+
+/* Thumbnail images */
+.property-image-gallery .image-gallery-thumbnail img {
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Fullscreen / nav icons */
+.image-gallery-icon {
+  color: #ffffff;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+/* ================= TABS ================= */
+
+.property-tabs {
+  margin-top: 48px;
+}
+
+/* Tab list */
+.react-tabs__tab-list {
+  border-bottom: 2px solid #e5e7eb;
+  display: flex;
+  gap: 24px;
+  padding-bottom: 8px;
+}
+
+/* Individual tabs */
+.react-tabs__tab {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 10px 0;
+  cursor: pointer;
+  border: none;
+}
+
+.react-tabs__tab--selected {
+  color: #2563eb;
+  border-bottom: 3px solid #2563eb;
+}
+
+/* Remove ugly default focus */
+.react-tabs__tab:focus {
+  outline: none;
+}
+
+/* ================= TAB CONTENT ================= */
+
+.react-tabs__tab-panel {
+  margin-top: 24px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.long-description {
+  max-width: 900px;
+}
+
+/* Floor plan */
+.floorplan-wrapper {
+  width: 100%;
+  overflow-x: auto; /* allows scrolling if image is very wide */
+  padding: 16px 0;
+}
+
+.floor-plan {
+  width: 100%;
+  height: auto;
+  max-width: none; /* IMPORTANT */
+  display: block;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .property-image-gallery .image-gallery-slide img {
+    height: 360px;
+  }
+
+  .property-image-gallery .image-gallery-thumbnails-wrapper.right {
+    display: none;
+  }
+}

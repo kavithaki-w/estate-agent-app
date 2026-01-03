@@ -1,6 +1,5 @@
 import SearchPage from "./SearchPage"
 import ResultsPage from "./ResultsPage"
-
 import data from "./properties.json"
 import {useState} from "react"
 
@@ -14,6 +13,7 @@ function App() {
     <>
     <SearchPage setResults={setResults}/>
     <ResultsPage results = {results}/>
+    
     </>
   );
 }
