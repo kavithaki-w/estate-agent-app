@@ -13,7 +13,7 @@ function ResultsPage({results}){
     }
 
     const removeFavourites = (property) => {
-        setFavourites(favourites.filter(fav => fav.id != property.id ))
+        setFavourites(favourites.filter(fav => fav.id !== property.id ))
     }
 
     const clearAll = () => {
