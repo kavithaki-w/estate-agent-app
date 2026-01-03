@@ -14,7 +14,7 @@ function Favourites({favourites,removeFavourites,clearAll}){
                     <strong>{property.name}</strong>
                     <p>{property.price}</p>
                 </div>
-                <button className = "remove-button" onClick={() => removeFavourites(property.id)}>X</button>
+                <button className = "remove-button" onClick={() => removeFavourites(property)}>X</button>
                 </li>
             ))}
             </ul>

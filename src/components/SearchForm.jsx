@@ -19,8 +19,8 @@ function SearchForm({onSearch}){
 
     const typeOptions = [ //All options in the type dropdown that can be picked
         {value: '', label:'Any Type'},
-        {value: 'flat', label:'Flat'},
-        {value: 'house', label:'House'}
+        {value: 'Flat', label:'Flat'},
+        {value: 'House', label:'House'}
     ]
 
     const bedroomOptions = [ //All options in the bedroom dropdown that can be picked
@@ -42,7 +42,7 @@ function SearchForm({onSearch}){
     const handleDateChange = (dateAdded, field)=>{
         setCriteria(prev =>  ({
             ...prev,
-            [field]: dateAdded ? dateAdded.toISOString().split('T')[0]:''
+            [field]: dateAdded? dateAdded.toISOString().split('T')[0]:''
         }))
     }
     const handleInputChange = (e) => {

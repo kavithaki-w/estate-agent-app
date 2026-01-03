@@ -1,7 +1,7 @@
 
-function PropertyCardLarge({property}){
+function PropertyCardLarge({property,addFavourites}){
     return(
-        <div className="small-prop-large">
+        <div className="large-prop-card">
             {/*<img src={property.thumbnail} alt={property.title}/>*/}
 
             <div className="property-info">
@@ -10,7 +10,8 @@ function PropertyCardLarge({property}){
                 <strong className="price">£{property.price.toLocaleString()}</strong>
                 <p className="type">{property.type}</p>
             </div>
-            <button className="heart">♥</button> 
+            <button className="heart" onClick={()=>addFavourites(property)}>♥</button> 
+            <button className="details">View Details</button> 
         </div>
     )
 }
