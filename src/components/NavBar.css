@@ -1,81 +1,96 @@
-/* Navbar container */
+/* ===== NAVBAR CONTAINER ===== */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
-  background-color: #004aad; /* clean blue */
-  color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+
+  padding: 10px 40px;
+  background: linear-gradient(90deg, #045a55, #066863);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  margin:10px;
 }
 
-/* Left side: logo + app name */
+/* ===== LEFT SIDE ===== */
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 12px;
 }
 
 .navbar-logo {
-  width: 40px;
-  height: 40px;
+  height: 34px;
+  width: auto;
+  object-fit: contain;
 }
 
-.navbar-appname {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: white;
+.navbar-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f0ede4;
+  letter-spacing: 0.3px;
 }
 
-/* Right side buttons */
+/* ===== RIGHT SIDE ===== */
 .navbar-right {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 16px;
 }
 
+/* ===== ICON BUTTON ===== */
 .navbar-btn {
-  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  background: transparent;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  font-family: inherit;
 }
 
-.navbar-btn:hover {
+/* Notification bell */
+.navbar-btn.notifications {
+  font-size: 18px;
+  color: #f0ede4;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.navbar-btn.notifications:hover {
+  background-color: rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
 }
 
-/* Notification button style */
-.notifications {
-  background-color: #0066ff;
-  color: white;
+/* ===== SIGN IN BUTTON ===== */
+.navbar-btn.signin {
+  background-color: #f0ede4;
+  color: #066863;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-/* Sign in button style */
-.signin {
-  background-color: white;
-  color: #004aad;
-  font-weight: bold;
+.navbar-btn.signin:hover {
+  background-color: #f1f5ff;
+  transform: translateY(-1px);
 }
 
-/* Responsive: stack buttons on smaller screens */
+.navbar-btn.signin:active {
+  transform: scale(0.97);
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    padding: 12px 20px;
   }
 
-  .navbar-right {
-    gap: 0.5rem;
-    align-self: stretch;
-  }
-
-  .navbar-btn {
-    width: 100%;
+  .navbar-appname {
+    font-size: 18px;
   }
 }

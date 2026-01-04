@@ -82,6 +82,7 @@ function SearchForm({onSearch}){
                     className = "price-inp"
                     placeholder = "No Min"
                     />
+                    <span className="range-separator">–</span>
 
                 {/*Max Price */}
                     <input
@@ -94,6 +95,7 @@ function SearchForm({onSearch}){
                     />
                 </div>
             </div>
+            
 
             <div className="form-question">
                 <label className="form-label">No. of Bedrooms</label>
@@ -107,7 +109,8 @@ function SearchForm({onSearch}){
                     className = "bedroom-inp"
                     placeholder = "No Min"
                     />
-                    
+                    <span className="range-separator">–</span>
+                
                 {/*Max Bedrooms */}
                     <Select
                     name = "maxBeds"
@@ -146,7 +149,6 @@ function SearchForm({onSearch}){
                     placeholderText = "From"
                     isClearable = {true}
                     />
-                    
                 {/*Date added To */}
                     <DatePicker
                     selected = {criteria.dateTo ? new Date(criteria.dateTo) : null}

@@ -1,315 +1,213 @@
-
 .search-form {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* ========================================
-   FORM QUESTIONS - Individual field groups
-   ======================================== */
+/* Two-row grid layout */
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 20px;
+}
 
+/* Each form question */
 .form-question {
-  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.form-question:last-of-type {
+/* Labels */
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
   margin-bottom: 0;
 }
 
-.form-label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
+/* Select dropdowns styling */
+.select-opt {
+  font-size: 14px;
 }
 
+.select-opt .react-select__control {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 4px 8px;
+  min-height: 42px;
+  box-shadow: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
 
+.select-opt .react-select__control:hover {
+  border-color: #b0b0b0;
+}
+
+.select-opt .react-select__control--is-focused {
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 1px #1a1a1a;
+}
+
+/* Price range container */
 .price-range {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 12px;
 }
 
 .price-inp {
-  width: 100%;
-  height: 44px;
-  padding: 0 14px;
-  border: 1px solid #e5e7eb;
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 0.95rem;
-  color: #1f2937;
-  transition: all 0.2s ease;
-  background: white;
+  font-size: 14px;
+  transition: border-color 0.2s;
 }
 
 .price-inp:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 1px #1a1a1a;
 }
 
 .price-inp::placeholder {
-  color: #9ca3af;
+  color: #999;
 }
 
-/* Remove number input arrows */
-.price-inp::-webkit-inner-spin-button,
-.price-inp::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+/* Bedroom inputs container */
 .bedroom-no {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 12px;
 }
 
-.postcode-inp {
-  width: 100%;
-  height: 44px;
-  padding: 0 14px;
-  border: 1px solid #e5e7eb;
+.bedroom-inp {
+  flex: 1;
+  font-size: 14px;
+}
+
+.bedroom-inp .react-select__control {
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 0.95rem;
-  color: #1f2937;
-  transition: all 0.2s ease;
-  background: white;
-  text-transform: uppercase;
+  padding: 4px 8px;
+  min-height: 42px;
+  box-shadow: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.bedroom-inp .react-select__control:hover {
+  border-color: #b0b0b0;
+}
+
+.bedroom-inp .react-select__control--is-focused {
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 1px #1a1a1a;
+}
+
+/* Postcode input */
+.postcode-inp {
+  width: 90%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
 }
 
 .postcode-inp:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 1px #1a1a1a;
 }
 
 .postcode-inp::placeholder {
-  color: #9ca3af;
-  text-transform: none;
+  color: #999;
 }
 
-/* ========================================
-   DATE RANGE - Side by side date pickers
-   ======================================== */
-
+/* Date range container */
 .date-range {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  display: flex;
+  gap: 30px;
 }
 
 .date-inp {
-  width: 100%;
-  height: 44px;
-  padding: 0 14px;
-  border: 1px solid #e5e7eb;
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 0.95rem;
-  color: #1f2937;
+  font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  background: white;
+  transition: border-color 0.2s;
+  width: 88%;
 }
 
 .date-inp:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 1px #1a1a1a;
 }
 
-/* ========================================
-   REACT-SELECT STYLING (Override defaults)
-   ======================================== */
-
-/* Container wrapper */
-.select-opt,
-.bedroom-inp {
-  font-size: 0.95rem;
+.date-inp::placeholder {
+  color: #999;
 }
 
-/* Remove the separator line between value and dropdown arrow */
-.select-opt .css-1u9des2-indicatorSeparator,
-.bedroom-inp .css-1u9des2-indicatorSeparator {
-  display: none;
-}
-
-/* Style the dropdown indicator (arrow) */
-.select-opt .css-1xc3v61-indicatorContainer,
-.bedroom-inp .css-1xc3v61-indicatorContainer {
-  color: #6b7280;
-}
-
-/* ========================================
-   REACT DATEPICKER STYLING
-   ======================================== */
-
-/* Wrapper to make it full width */
-.react-datepicker-wrapper {
-  width: 100%;
-}
-
-/* Calendar popup */
-.react-datepicker {
-  font-family: inherit;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Calendar header (month/year display) */
-.react-datepicker__header {
-  background-color: #3b82f6;
-  border-bottom: none;
-  border-radius: 12px 12px 0 0;
-  padding-top: 12px;
-}
-
-.react-datepicker__current-month {
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-/* Day names (Mon, Tue, etc.) */
-.react-datepicker__day-name {
-  color: white;
-  font-weight: 500;
-}
-
-/* Selected date styling */
-.react-datepicker__day--selected,
-.react-datepicker__day--keyboard-selected {
-  background-color: #3b82f6;
-  color: white;
-  font-weight: 600;
-}
-
-/* Hover effect on dates */
-.react-datepicker__day:hover {
-  background-color: #eff6ff;
-  color: #1f2937;
-  border-radius: 6px;
-}
-
-/* Today's date */
-.react-datepicker__day--today {
-  font-weight: 600;
-  color: #3b82f6;
-}
-
-/* Clear button (X) styling */
-.react-datepicker__close-icon::after {
-  background-color: #ef4444;
-  color: white;
-  font-size: 16px;
-  height: 18px;
-  width: 18px;
-  line-height: 16px;
-}
-
-.react-datepicker__close-icon:hover::after {
-  background-color: #dc2626;
-}
-
-/* ========================================
-   SEARCH BUTTON
-   ======================================== */
-
+/* Search button - spans full width at bottom */
 .search-button {
-  width: 100%;
-  height: 50px;
-  margin-top: 20px;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background-color: #1a1a1a;
   color: white;
+  padding: 12px 53px;
   border: none;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+  max-width: 250px;
+  justify-self: center;
 }
 
 .search-button:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  background-color: #333;
 }
 
 .search-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transform: scale(0.98);
 }
 
-/* Icon inside button */
-.search-button svg {
-  flex-shrink: 0;
+.range-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #080000;
+  user-select: none;
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+/* Remove number input arrows */
+.price-inp::-webkit-outer-spin-button,
+.price-inp::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-/* Tablet and below */
+.price-inp[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 24px;
-  }
-
   .search-form {
-    padding: 20px;
-  }
-
-  .price-range,
-  .bedroom-no,
-  .date-range {
     grid-template-columns: 1fr;
-    gap: 10px;
+    max-width: 100%;
   }
-
-  .form-question {
-    margin-bottom: 14px;
-  }
-
+  
   .search-button {
-    height: 48px;
-    font-size: 0.95rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-
-  .search-form {
-    padding: 16px;
-  }
-
-  .form-label {
-    font-size: 0.8rem;
-  }
-
-  .price-inp,
-  .postcode-inp,
-  .date-inp {
-    height: 42px;
-    font-size: 0.9rem;
-  }
-
-  .search-button {
-    height: 46px;
-    margin-top: 16px;
+    max-width: 100%;
   }
 }

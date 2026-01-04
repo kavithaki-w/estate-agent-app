@@ -9,7 +9,7 @@ function Navbar() {
           alt="PropertyFinder Logo"
           className="navbar-logo"
         />
-        <span className="navbar-appname">PropertyFinder</span>
+        <span className="navbar-name">PropertyFinder</span>
       </div>
 
       <div className="navbar-right">
