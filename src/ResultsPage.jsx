@@ -8,9 +8,20 @@ import "./ResultsPage.css";
 function ResultsPage({results,favourites,addFavourites,removeFavourites,clearAll}){
     const navigate = useNavigate();
 
+    const allowDrop = (e) => e.preventDefault();
+
+    const handleDropOutside = (e) => {
+    e.preventDefault();
+    const propertyId = e.dataTransfer.getData("fav-property");
+
+    if (propertyId) {
+        removeFavourites({ id: propertyId });
+    }
+    };
+
     return(
 
-        <div className = "results-page">
+        <div className = "results-page" onDragOver={allowDrop} onDrop={handleDropOutside}>
             <NavBar/>
 
             <button 
@@ -51,6 +62,7 @@ function ResultsPage({results,favourites,addFavourites,removeFavourites,clearAll
                         favourites={favourites} 
                         removeFavourites={removeFavourites} 
                         clearAll={clearAll}
+                        addFavourites={addFavourites}
                     />
                 </div>
             </div>

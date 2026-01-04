@@ -1,0 +1,74 @@
+
+.favourite-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favourite-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: #f9fafb;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.favourite-item:hover {
+  background: #eef2ff;
+}
+
+.favourite-item img {
+  width: 80px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.favourite-item .property-info {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.favourite-item .property-info strong {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.favourite-item .property-info p {
+  color: #2563eb;
+  font-weight: 600;
+  margin-top: -3px;
+}
+
+
+/* Remove button hidden until hover */
+.remove-button {
+  opacity: 0;
+  border: none;
+  background: #ef4444;
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.favourite-item:hover .remove-button {
+  opacity: 1;
+}
+
+.clear-all {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+}

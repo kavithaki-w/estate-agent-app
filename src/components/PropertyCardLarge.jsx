@@ -3,8 +3,13 @@ import "./PropertyCardLarge.css";
 
 function PropertyCardLarge({property,addFavourites}){
     const navigate = useNavigate()
+
+    const handleDragStart = (e) => {
+        e.dataTransfer.setData("property", JSON.stringify(property));
+    };
+
     return(
-        <div className="large-prop-card">
+        <div className="large-prop-card" draggable="true" onDragStart={handleDragStart}>
 
             <div className="card-img">
             <img src={property.thumbnail} alt={property.name}/>
@@ -22,7 +27,7 @@ function PropertyCardLarge({property,addFavourites}){
 
                 </div>
 
-                <p className="desription">{property.description}</p>
+                <p className="description">{property.description}</p>
                 <strong className="price">£{property.price.toLocaleString()}</strong>
             </div>
 
