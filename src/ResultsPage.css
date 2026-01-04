@@ -1,0 +1,141 @@
+/* Results Page Container */
+.results-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+/* Results Content Grid */
+.results-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Properties List Container */
+.properties-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Results Header */
+.results-header {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.results-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 600;
+}
+
+.results-count {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Back Button */
+.back-to-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+}
+
+.back-to-search:hover {
+  background: #e0e0e0;
+}
+
+/* Favourites Sidebar */
+.favourites-sidebar {
+  position: sticky;
+  top: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+/* No Results Message */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-results h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.no-results p {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+  .results-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .favourites-sidebar {
+    position: relative;
+    top: 0;
+    max-height: none;
+  }
+
+  .results-header h2 {
+    font-size: 22px;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .results-page {
+    padding: 15px;
+  }
+
+  .results-content {
+    gap: 15px;
+  }
+
+  .results-header {
+    padding: 16px;
+  }
+
+  .results-header h2 {
+    font-size: 20px;
+  }
+
+  .back-to-search {
+    width: 100%;
+    justify-content: center;
+  }
+}

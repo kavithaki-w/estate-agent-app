@@ -1,9 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 import PropertyCardLarge from "./components/PropertyCardLarge.jsx";
 import Favourites from "./components/Favourites.jsx";
 import NavBar from "./components/NavBar.jsx"
+import "./ResultsPage.css";
 
 
 function ResultsPage({results,favourites,setFavourites}){
+    const navigate = useNavigate();
+
 
     const addFavourites = (property) => {
         if(!favourites.some(fav => fav.id === property.id)){
@@ -23,9 +28,48 @@ function ResultsPage({results,favourites,setFavourites}){
 
         <div className = "results-page">
             <NavBar/>
-            {results.map(property => (
-            <PropertyCardLarge key={property.id} property={property} addFavourites={addFavourites}/> ))}
-            <Favourites favourites={favourites} removeFavourites={removeFavourites} clearAll = {clearAll}/>
+
+            <button 
+                className="back-to-search"
+                onClick={() => navigate('/')}
+            >
+                ← Back to Search
+            </button>
+
+            <div className="results-header">
+                <h2>Search Results</h2>
+                <p className="results-count">
+                    {results.length} {results.length === 1 ? 'property' : 'properties'} found
+                </p>
+            </div>
+
+            <div className="results-content">
+                {/* Properties List */}
+                <div className="properties-list">
+                    {results.length > 0 ? (
+                        results.map(property => (
+                            <PropertyCardLarge 
+                                key={property.id} 
+                                property={property} 
+                                addFavourites={addFavourites}
+                            />
+                        ))
+                    ) : (
+                        <div className="no-results">
+                            <h3>No properties found</h3>
+                        </div>
+                    )}
+                </div>
+
+                {/* Favourites Sidebar */}
+                <div className="favourites-sidebar">
+                    <Favourites 
+                        favourites={favourites} 
+                        removeFavourites={removeFavourites} 
+                        clearAll={clearAll}
+                    />
+                </div>
+            </div>
         </div>
     )
 

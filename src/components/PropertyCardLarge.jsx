@@ -1,19 +1,35 @@
 import { useNavigate } from "react-router-dom";
+import "./PropertyCardLarge.css";
 
 function PropertyCardLarge({property,addFavourites}){
     const navigate = useNavigate()
     return(
         <div className="large-prop-card">
-            <img src={property.thumbnail} alt={property.name}/>
 
+            <div className="card-img">
+            <img src={property.thumbnail} alt={property.name}/>
+            </div>
             <div className="property-info">
                 <h4>{property.name}</h4>
+                <p className="location">{property.location}</p>
+
+                <div className="property-details">
+                    <span>🛏️ {property.bedrooms} Bedroom{property.bedrooms > 1 ? 's' : ''}</span>
+                    <span>•</span>
+                    <span>{property.tenure}</span>
+                     <span>•</span>
+                    <span>{property.type}</span>
+
+                </div>
+
                 <p className="desription">{property.description}</p>
                 <strong className="price">£{property.price.toLocaleString()}</strong>
-                <p className="type">{property.type}</p>
             </div>
+
+            <div className="card-actions">
             <button className="heart" onClick={()=>addFavourites(property)}>♥</button> 
             <button className="details" onClick={() => navigate(`/property/${property.id}`)}>View Details</button> 
+            </div>
         </div>
     )
 }
