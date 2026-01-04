@@ -5,10 +5,13 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import "./PropertyDetailPage.css";
 import { useParams } from "react-router-dom"
 import data from "./properties.json";
+import NavBar from "./components/NavBar.jsx"
+import { useNavigate } from "react-router-dom";
 
 
-function PropertyDetailPage(){
-    const { id } = useParams(); //reading ID from URL
+function PropertyDetailPage({addFavourites}){
+    const { id } = useParams() //reading ID from URL
+    const navigate = useNavigate()
 
     // Find matching property
     const property = data.properties.find(
@@ -28,12 +31,28 @@ function PropertyDetailPage(){
   }));
 
   return(
+    <>
+    <NavBar/>
     <div className="property-detail">
+
+        <button 
+                className="back-to-search"
+                onClick={() => navigate('/results')}
+            >
+                ← Back to Search
+            </button>
+
         <div className="detail-header">
         </div>
 
         <div className="property-title-section">
-            <h1>{property.name}</h1>
+            <div className="title-row">
+                <h1>{property.name}</h1>
+
+                <button className="favourite-button" onClick={()=>addFavourites(property)}>
+                    ♥ Add to favourites
+                </button>
+            </div>
             <p className="location">📍 {property.location}</p>
             <div className="property-meta">
                 <span className="price">£{property.price.toLocaleString()}</span>
@@ -81,17 +100,33 @@ function PropertyDetailPage(){
                 {/* FLOOR PLAN */}
                 <TabPanel>
                 <div className="floorplan-wrapper">
+                    <div className = "floorplan-img">
                     <img
                     src={property.floorPlan}
                     alt="Floor Plan"
                     className="floor-plan"
                     />
+                    </div>
                 </div>
                 </TabPanel>
+
+                <TabPanel>
+                    <div className="map-wrapper">
+                        <iframe
+                        title="Property location map"
+                        src={`https://www.google.com/maps?q=${property.coordinates.lat},${property.coordinates.lng}&z=15&output=embed`}
+                        width="100%"
+                        height="400"
+                        style={{ border: "1px solid silver" , borderRadius: "16px" }}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        />
+                    </div>
+                    </TabPanel>
             </Tabs>
                     
         </div>
-
+    </>
   )
 }
 

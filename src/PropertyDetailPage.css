@@ -3,7 +3,7 @@
 .property-detail {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 15px;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: #1f2937;
   background-color: #ffffff;
@@ -20,7 +20,8 @@
 .location {
   font-size: 1rem;
   color: #6b7280;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+  margin-top:-6px;
 }
 
 .property-meta {
@@ -140,6 +141,16 @@
   width: 100%;
   overflow-x: auto; /* allows scrolling if image is very wide */
   padding: 16px 0;
+
+}
+
+.floorplan-img {
+  margin-top: 16px;
+  background: #081725;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.323);
+  border: 2px solid black;
 }
 
 .floor-plan {
@@ -150,6 +161,57 @@
   border-radius: 12px;
   background: #f9fafb;
 }
+
+/* ================= MAP ================= */
+
+.map-wrapper {
+  margin-top: 16px;
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.323);
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-to-search {
+  background: transparent;
+  color: #2563eb;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 1px 0;
+  margin-bottom: 5px;
+  margin-top:0;
+}
+/* ================= TITLE ROW ================= */
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.favourite-button {
+  background: #6cbb98;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top:35px;
+}
+
+.favourite-button:hover {
+  background: #fecaca;
+  transform: translateY(-1px);
+}
+
+
 
 /* ================= RESPONSIVE ================= */
 

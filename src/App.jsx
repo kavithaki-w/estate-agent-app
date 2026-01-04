@@ -9,7 +9,20 @@ import PropertyDetailPage from "./PropertyDetailPage";
 function App() {
   const [results, setResults] = useState(data.properties);
   const [favourites, setFavourites] = useState([]);
-  console.log(favourites)
+  
+  const addFavourites = (property) => {
+        if(!favourites.some(fav => fav.id === property.id)){
+            setFavourites([...favourites, property])
+        }
+    }
+
+    const removeFavourites = (property) => {
+        setFavourites(favourites.filter(fav => fav.id !== property.id ))
+    }
+
+    const clearAll = () => {
+        setFavourites([])
+    }
 
 
   return (
@@ -18,9 +31,9 @@ function App() {
 
         <Route path="/" element = {<SearchPage setResults={setResults} favourites={favourites}/>}/>
 
-        <Route path="/results" element = {<ResultsPage results = {results} favourites={favourites} setFavourites={setFavourites}/>}/>
+        <Route path="/results" element = {<ResultsPage results = {results} favourites={favourites} addFavourites={addFavourites} removeFavourites={removeFavourites} clearAll={clearAll}/>}/>
         
-        <Route path="/property/:id" element = {<PropertyDetailPage/>} />
+        <Route path="/property/:id" element = {<PropertyDetailPage addFavourites={addFavourites}/>} />
       </Routes>
     </BrowserRouter>
   );

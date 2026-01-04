@@ -1,28 +1,12 @@
 import { useNavigate } from "react-router-dom";
-
 import PropertyCardLarge from "./components/PropertyCardLarge.jsx";
 import Favourites from "./components/Favourites.jsx";
 import NavBar from "./components/NavBar.jsx"
 import "./ResultsPage.css";
 
 
-function ResultsPage({results,favourites,setFavourites}){
+function ResultsPage({results,favourites,addFavourites,removeFavourites,clearAll}){
     const navigate = useNavigate();
-
-
-    const addFavourites = (property) => {
-        if(!favourites.some(fav => fav.id === property.id)){
-            setFavourites([...favourites, property])
-        }
-    }
-
-    const removeFavourites = (property) => {
-        setFavourites(favourites.filter(fav => fav.id !== property.id ))
-    }
-
-    const clearAll = () => {
-        setFavourites([])
-    }
 
     return(
 
