@@ -1,0 +1,76 @@
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 85vh;
+  background-image: url("/images/hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  border-radius:10px;
+  margin: 10px;
+  margin-top:15px;
+}
+
+/* Dark overlay */
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Content */
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top:200px;
+  padding: 0 24px;
+  color: #ffffff;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.hero-content p {
+  font-size: 16px;
+  color: #e0e0e0;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tabs button {
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.tabs button.active {
+  background: #0f766e;
+  color: white;
+  border-color: #0f766e;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+  margin:20px;
+}
+

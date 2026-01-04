@@ -8,16 +8,17 @@ import PropertyDetailPage from "./PropertyDetailPage";
 
 function App() {
   const [results, setResults] = useState(data.properties);
-  console.log("RESULTS IN APP:", results);
+  const [favourites, setFavourites] = useState([]);
+  console.log(favourites)
 
 
   return (
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element = {<SearchPage setResults={setResults}/>}/>
+        <Route path="/" element = {<SearchPage setResults={setResults} favourites={favourites}/>}/>
 
-        <Route path="/results" element = {<ResultsPage results = {results}/>}/>
+        <Route path="/results" element = {<ResultsPage results = {results} favourites={favourites} setFavourites={setFavourites}/>}/>
         
         <Route path="/property/:id" element = {<PropertyDetailPage/>} />
       </Routes>

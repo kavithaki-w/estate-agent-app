@@ -3,10 +3,20 @@ import NavBar from "./components/NavBar.jsx"
 import SearchForm from "./components/SearchForm"
 import { useNavigate } from "react-router-dom"
 import data from "./properties.json"
+import "./SearchPage.css";
+import {useState} from "react"
 
 
-function SearchPage({setResults}){
-    const navigate = useNavigate()
+
+function SearchPage({setResults, favourites}){
+  const [activeTab, setActiveTab] = useState("properties");
+  const navigate = useNavigate()
+
+  const displayedProperties =
+  activeTab === "properties"
+    ? data.properties.slice(0, 6)
+    : favourites;
+
 
   const handleSearch = (criteria) =>{
     let filteredRes = [...data.properties]
@@ -75,24 +85,37 @@ function SearchPage({setResults}){
       <NavBar/>
 
       {/* Hero Sectiom */}
-      <div className="hero">
+      <section className="hero">
         <div className = "hero-overlay">
+          <div className = "hero-content">
+            <h1>Your Reliable Ally in <br/> Worldwise Real Estate</h1>
+
             <SearchForm onSearch={handleSearch}/>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Tabs */}
       <div className="tabs">
-        <button className="active">Properties</button>
-        <button>Favourites</button>
+        <button className={activeTab === "properties" ? "active" : ""}
+          onClick={() => setActiveTab("properties")}>Properties</button>
+        <button className={activeTab === "favourites" ? "active" : ""}
+          onClick={() => setActiveTab("favourites")}>Favourites</button>
       </div>
 
-      {data.properties.map((property) => (
-        <PropertyCardSmall
-          key={property.id}
-          property={property}
-        />
-      ))}
+
+      <div className="properties-grid">
+      {displayedProperties.length === 0 ? (
+        <p>No favourites yet.</p>
+      ) : (
+        displayedProperties.map(property => (
+          <PropertyCardSmall
+            key={property.id}
+            property={property}
+          />
+        ))
+      )}
+      </div>
     </div>
   )
 }
