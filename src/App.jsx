@@ -2,7 +2,7 @@ import SearchPage from "./SearchPage"
 import ResultsPage from "./ResultsPage"
 import data from "./properties.json"
 import {useState} from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import PropertyDetailPage from "./PropertyDetailPage";
 
 
@@ -26,7 +26,7 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
 
         <Route path="/" element = {<SearchPage setResults={setResults} favourites={favourites}/>}/>
@@ -35,7 +35,7 @@ function App() {
         
         <Route path="/property/:id" element = {<PropertyDetailPage addFavourites={addFavourites}/>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
