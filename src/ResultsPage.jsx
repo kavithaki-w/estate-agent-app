@@ -28,7 +28,7 @@ function ResultsPage({results,favourites,addFavourites,removeFavourites,clearAll
                 className="back-to-search"
                 onClick={() => navigate('/')}
             >
-                ← Back to Search
+                ←  Back to Search
             </button>
 
             <div className="results-header">

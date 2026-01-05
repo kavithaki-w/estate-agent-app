@@ -1,4 +1,4 @@
-/* ================= ROOT LAYOUT ================= */
+
 
 .property-detail {
   max-width: 1200px;
@@ -8,8 +8,6 @@
   color: #1f2937;
   background-color: #ffffff;
 }
-
-/* ================= TITLE SECTION ================= */
 
 .property-title-section h1 {
   font-size: 2.4rem;
@@ -35,27 +33,24 @@
 .price {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #2a7556;
 }
 
 .bullet {
   color: #9ca3af;
 }
 
-/* ================= GALLERY ================= */
 
 .gallery-wrapper {
   margin-top: 32px;
 }
 
-/* Make main image BIG */
 .property-image-gallery .image-gallery-slide img {
   height: 520px;
   object-fit: cover;
   border-radius: 16px;
 }
 
-/* Thumbnail column (RIGHT SIDE) */
 .property-image-gallery .image-gallery-thumbnails-wrapper.right {
   width: 110px;
 }
@@ -73,29 +68,25 @@
 }
 
 .property-image-gallery .image-gallery-thumbnail.active {
-  border-color: #2563eb;
+  border-color: #369e73;
 }
 
-/* Thumbnail images */
 .property-image-gallery .image-gallery-thumbnail img {
   height: 80px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-/* Fullscreen / nav icons */
 .image-gallery-icon {
   color: #ffffff;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
 }
 
-/* ================= TABS ================= */
 
 .property-tabs {
   margin-top: 48px;
 }
 
-/* Tab list */
 .react-tabs__tab-list {
   border-bottom: 2px solid #e5e7eb;
   display: flex;
@@ -103,7 +94,6 @@
   padding-bottom: 8px;
 }
 
-/* Individual tabs */
 .react-tabs__tab {
   font-size: 1rem;
   font-weight: 600;
@@ -114,16 +104,14 @@
 }
 
 .react-tabs__tab--selected {
-  color: #2563eb;
-  border-bottom: 3px solid #2563eb;
+  color: #1b4332;
+  border-bottom: 3px solid #1b4332;
 }
 
-/* Remove ugly default focus */
 .react-tabs__tab:focus {
   outline: none;
 }
 
-/* ================= TAB CONTENT ================= */
 
 .react-tabs__tab-panel {
   margin-top: 24px;
@@ -136,55 +124,52 @@
   max-width: 900px;
 }
 
-/* Floor plan */
 .floorplan-wrapper {
-  width: 100%;
-  overflow-x: auto; /* allows scrolling if image is very wide */
+  width: 70%;
+  overflow-x: auto; 
   padding: 16px 0;
+  margin: 0 auto;
 
 }
 
 .floorplan-img {
   margin-top: 16px;
-  background: #081725;
-  padding: 16px;
+  background: #123c2b;
+  padding: 10px;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.323);
-  border: 2px solid black;
 }
 
 .floor-plan {
   width: 100%;
   height: auto;
-  max-width: none; /* IMPORTANT */
+  max-width: none; 
   display: block;
   border-radius: 12px;
   background: #f9fafb;
 }
 
-/* ================= MAP ================= */
 
 .map-wrapper {
   margin-top: 16px;
   background: #f9fafb;
   padding: 16px;
   border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.323);
+  box-shadow: 0 6px 20px #1b433278;
 }
 
-/* ================= BACK BUTTON ================= */
 
 .back-to-search {
   background: transparent;
-  color: #2563eb;
+  color: #1b4332;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   padding: 1px 0;
   margin-bottom: 5px;
   margin-top:0;
+  border:none;
 }
-/* ================= TITLE ROW ================= */
 
 .title-row {
   display: flex;
@@ -194,7 +179,7 @@
 }
 
 .favourite-button {
-  background: #6cbb98;
+  background: #1b4332;
   color: #ffffff;
   border: none;
   padding: 10px 16px;
@@ -207,20 +192,38 @@
 }
 
 .favourite-button:hover {
-  background: #fecaca;
+  background: #2d6c52;
   transform: translateY(-1px);
 }
 
 
 
-/* ================= RESPONSIVE ================= */
 
-@media (max-width: 900px) {
-  .property-image-gallery .image-gallery-slide img {
-    height: 360px;
+/* ===== PROPERTY DETAILS RESPONSIVE ===== */
+@media (max-width: 1024px) {
+
+  .property-detail {
+    padding: 12px;
   }
 
-  .property-image-gallery .image-gallery-thumbnails-wrapper.right {
-    display: none;
+  .property-title-section h1 {
+    font-size: 1.9rem;
+  }
+
+  .property-image-gallery .image-gallery-slide img {
+    height: 320px;
+  }
+
+  .floorplan-wrapper {
+    width: 100%;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .favourite-button {
+    margin-top: 12px;
   }
 }

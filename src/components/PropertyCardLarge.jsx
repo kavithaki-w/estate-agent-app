@@ -19,7 +19,9 @@ function PropertyCardLarge({property,addFavourites}){
                 <p className="location">{property.location}</p>
 
                 <div className="property-details">
-                    <span>🛏️ {property.bedrooms} Bedroom{property.bedrooms > 1 ? 's' : ''}</span>
+                    <span> 
+                        <img src="/images/bed.png"/>
+                        {property.bedrooms} Bedroom{property.bedrooms > 1 ? 's' : ''}</span>
                     <span>•</span>
                     <span>{property.tenure}</span>
                      <span>•</span>

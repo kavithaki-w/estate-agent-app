@@ -18,7 +18,7 @@ function Favourites({favourites,removeFavourites,clearAll,addFavourites}){
         <div className="favourite-box" onDragOver={allowDrop} onDrop={handleDrop}>
             <h3>Favourites</h3>
 
-            {favourites.length ===0 && <p>No Favourites Yet</p> } {/*Rendering a message if favourites is empty */}
+            {favourites.length ===0 && <p style={{fontSize:"14px", fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"}}>No Favourites Yet</p> } {/*Rendering a message if favourites is empty */}
 
             <ul className="favourite-list">
             {favourites.map((property) => (

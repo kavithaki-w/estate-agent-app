@@ -88,7 +88,7 @@ function SearchPage({setResults, favourites}){
       <section className="hero">
         <div className = "hero-overlay">
           <div className = "hero-content">
-            <h1>Your Reliable Ally in <br/> Worldwise Real Estate</h1>
+            <h1>Your Reliable Ally in <br/> Worldwide Real Estate</h1>
 
             <SearchForm onSearch={handleSearch}/>
           </div>
@@ -97,9 +97,9 @@ function SearchPage({setResults, favourites}){
 
       {/* Tabs */}
       <div className="tabs">
-        <button className={activeTab === "properties" ? "active" : ""}
+        <button style={{fontSize:"16px", fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"}} className={activeTab === "properties" ? "active" : ""}
           onClick={() => setActiveTab("properties")}>Properties</button>
-        <button className={activeTab === "favourites" ? "active" : ""}
+        <button style={{fontSize:"16px", fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"}}  className={activeTab === "favourites" ? "active" : ""}
           onClick={() => setActiveTab("favourites")}>Favourites</button>
       </div>
 

@@ -5,23 +5,22 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   max-width: 900px;
   margin: 0 auto;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
-/* Two-row grid layout */
 .search-form {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px 20px;
 }
 
-/* Each form question */
 .form-question {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Labels */
 .form-label {
   font-size: 13px;
   font-weight: 600;
@@ -29,7 +28,6 @@
   margin-bottom: 0;
 }
 
-/* Select dropdowns styling */
 .select-opt {
   font-size: 14px;
 }
@@ -53,7 +51,29 @@
   box-shadow: 0 0 0 1px #1a1a1a;
 }
 
-/* Price range container */
+.select-opt .react-select__single-value,
+.bedroom-inp .react-select__single-value {
+  color: #1a1a1a;
+}
+
+.select-opt .react-select__option,
+.bedroom-inp .react-select__option {
+  color: #1a1a1a;
+}
+
+.select-opt .react-select__option--is-focused,
+.bedroom-inp .react-select__option--is-focused {
+  background-color: #f0f0f0;
+  color: #1a1a1a;
+}
+
+.select-opt .react-select__option--is-selected,
+.bedroom-inp .react-select__option--is-selected {
+  background-color: #1b4332;
+  color: white;
+}
+
+
 .price-range {
   display: flex;
   gap: 12px;
@@ -78,7 +98,6 @@
   color: #999;
 }
 
-/* Bedroom inputs container */
 .bedroom-no {
   display: flex;
   gap: 12px;
@@ -108,7 +127,6 @@
   box-shadow: 0 0 0 1px #1a1a1a;
 }
 
-/* Postcode input */
 .postcode-inp {
   width: 90%;
   padding: 10px 12px;
@@ -128,7 +146,6 @@
   color: #999;
 }
 
-/* Date range container */
 .date-range {
   display: flex;
   gap: 30px;
@@ -155,9 +172,8 @@
   color: #999;
 }
 
-/* Search button - spans full width at bottom */
 .search-button {
-  background-color: #1a1a1a;
+  background-color: #1b4332;
   color: white;
   padding: 12px 53px;
   border: none;
@@ -169,6 +185,8 @@
   margin-top: 20px;
   max-width: 250px;
   justify-self: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 .search-button:hover {
@@ -189,7 +207,6 @@
   user-select: none;
 }
 
-/* Remove number input arrows */
 .price-inp::-webkit-outer-spin-button,
 .price-inp::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -200,7 +217,6 @@
   -moz-appearance: textfield;
 }
 
-/* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .search-form {
     grid-template-columns: 1fr;

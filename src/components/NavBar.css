@@ -1,4 +1,3 @@
-/* ===== NAVBAR CONTAINER ===== */
 .navbar {
   position: sticky;
   top: 0;
@@ -9,13 +8,12 @@
   align-items: center;
 
   padding: 10px 40px;
-  background: linear-gradient(90deg, #045a55, #066863);
+  background: linear-gradient(90deg, #1b4332 , #1d4635 );
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   border-radius: 10px;
   margin:10px;
 }
 
-/* ===== LEFT SIDE ===== */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -33,16 +31,16 @@
   font-weight: 700;
   color: #f0ede4;
   letter-spacing: 0.3px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
-/* ===== RIGHT SIDE ===== */
 .navbar-right {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-/* ===== ICON BUTTON ===== */
 .navbar-btn {
   border: none;
   background: transparent;
@@ -50,33 +48,25 @@
   font-family: inherit;
 }
 
-/* Notification bell */
-.navbar-btn.notifications {
-  font-size: 18px;
-  color: #f0ede4;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+.navbar-btn img {
+  font-size: 10px;
+  padding: 2px;
 }
 
-.navbar-btn.notifications:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: scale(1.05);
-}
 
-/* ===== SIGN IN BUTTON ===== */
 .navbar-btn.signin {
-  background-color: #f0ede4;
+  background-color: white;
   color: #066863;
   padding: 9px 18px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
 .navbar-btn.signin:hover {
-  background-color: #f1f5ff;
+  background-color: #f1fff6;
   transform: translateY(-1px);
 }
 
@@ -84,7 +74,6 @@
   transform: scale(0.97);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {
     padding: 12px 20px;

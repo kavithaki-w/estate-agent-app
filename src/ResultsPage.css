@@ -1,11 +1,10 @@
-/* Results Page Container */
 .results-page {
   min-height: 100vh;
   background: #f5f5f5;
   padding: 20px;
 }
 
-/* Results Content Grid */
+
 .results-content {
   max-width: 1400px;
   margin: 0 auto;
@@ -15,57 +14,58 @@
   align-items: start;
 }
 
-/* Properties List Container */
+
 .properties-list {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
-/* Results Header */
 .results-header {
   background: white;
   padding: 20px;
+  margin-left:28px;
+  margin-right:28px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px #1b43324f;
   margin-bottom: 20px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 .results-header h2 {
   margin: 0;
-  font-size: 24px;
-  color: #333;
+  font-size: 20px;
+  color: #1b4332;
   font-weight: 600;
 }
 
 .results-count {
-  font-size: 14px;
-  color: #666;
-  margin-top: 8px;
+  font-size: 13px;
+  color: #1b4332dd;
+  margin-top: 5px;
+  margin-bottom:-2px;
 }
 
-/* Back Button */
-.back-to-search {
+
+.results-page .back-to-search {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
   background: #f5f5f5;
   border: none;
-  border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
-  color: #333;
+  color: #1b4332;
   cursor: pointer;
-  transition: all 0.3s;
-  margin-bottom: 20px;
+  margin: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  
+
 }
 
-.back-to-search:hover {
-  background: #e0e0e0;
-}
-
-/* Favourites Sidebar */
 .favourites-sidebar {
   position: sticky;
   top: 20px;
@@ -77,7 +77,6 @@
   overflow-y: auto;
 }
 
-/* No Results Message */
 .no-results {
   text-align: center;
   padding: 60px 20px;
@@ -98,44 +97,36 @@
   color: #666;
 }
 
-/* Responsive Design - Tablet */
+/* ===== RESULTS PAGE RESPONSIVE ===== */
 @media (max-width: 1024px) {
+
   .results-content {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .favourites-sidebar {
-    position: relative;
-    top: 0;
-    max-height: none;
+    order: 2;
+    margin-top: 20px;
   }
 
-  .results-header h2 {
-    font-size: 22px;
-  }
-}
-
-/* Responsive Design - Mobile */
-@media (max-width: 768px) {
-  .results-page {
-    padding: 15px;
-  }
-
-  .results-content {
-    gap: 15px;
+  .properties-list {
+    order: 1;
   }
 
   .results-header {
-    padding: 16px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .results-page {
+    padding: 12px;
   }
 
   .results-header h2 {
-    font-size: 20px;
-  }
-
-  .back-to-search {
-    width: 100%;
-    justify-content: center;
+    font-size: 18px;
   }
 }
